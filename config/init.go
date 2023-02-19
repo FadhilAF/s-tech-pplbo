@@ -1,4 +1,4 @@
-package env
+package config
 
 import (
   "log"
@@ -8,7 +8,7 @@ import (
 
 type Config struct {
   AppPort string `mapstructure:"APP_PORT"`
-  MysqlUrl string `mapstructure:"MYSQL_CONNECTION_URL"` 
+  PostgresUrl string `mapstructure:"POSTGRES_CONNECTION_URL"` 
 }
 
 func LoadConfig(envPath string) Config {

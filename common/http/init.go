@@ -9,10 +9,7 @@ type HTTPServer struct {
 }
 
 func NewHTTPServer() HTTPServer {
-
 	router := gin.Default()
-
-  router.LoadHTMLGlob("internal/view/*.html")
 
 	return HTTPServer{
 		Router: router,

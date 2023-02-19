@@ -1,7 +1,10 @@
-version: 1
-packages:
-  - path: "./internal/db/mysql/sqlc"
-    name: "mysql"
-    engine: "mysql"
-    schema: "./common/mysql/migration"
-    queries: "./common/mysql/query"
+version: "2"
+sql:
+  - engine: "postgresql"
+    queries: "common/postgres/query"
+    schema: "common/postgres/migration"
+    gen:
+      go:
+        package: "postgres"
+        out: "internal/repository/postgres/sqlc"
+        emit_interface: true

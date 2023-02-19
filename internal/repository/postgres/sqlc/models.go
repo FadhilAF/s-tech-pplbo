@@ -2,19 +2,20 @@
 // versions:
 //   sqlc v1.16.0
 
-package mysql
+package postgres
 
 import (
-	"database/sql"
 	"time"
+
+	"github.com/google/uuid"
 )
 
 type User struct {
-	ID           int32
+	ID           uuid.UUID
 	Name         string
 	Email        string
 	PasswordHash string
-	Address      sql.NullString
-	PhoneNumber  sql.NullString
+	Address      string
+	Phone        string
 	CreatedAt    time.Time
 }

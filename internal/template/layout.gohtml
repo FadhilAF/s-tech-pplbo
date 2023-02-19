@@ -1,0 +1,35 @@
+{{ define "header" }}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>S-TECH | {{ .Title }}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+<header>
+  <center>
+    <h1>S-TECH</h1>
+    <a href="/">Home</a>
+    <a href="/buy">Belanja</a>
+    {{if .IsLoggedIn}}
+      <a href="/auth/profile">Profile</a>
+      <a href="/buy/order">Pesanan</a>
+      <a href="/auth/logout">Logout</a>
+    {{else}}
+      <a href="/auth/register">Register</a> 
+      <a href="/auth/login">Login</a> 
+    {{end}}
+  </center>
+</header>
+{{ end }}
+
+{{ define "footer" }}
+    <footer>
+      <center>
+        <p>copyright S-TECH</p>
+      </center>
+    </footer>
+  </body>
+</html>
+{{ end }}
